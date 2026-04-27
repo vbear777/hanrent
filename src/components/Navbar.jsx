@@ -29,7 +29,7 @@ const NavBar = ({ setShowLogin }) => {
                     <button onClick={() => navigate('/owner')} className='curso-pointer'>
                         Dashboard
                     </button>
-                    <button onClick={() => setShowLogin(true)} className='cursor-pointer px-8 py-2 bg-dark-ocean hover:bg-primary-dull transition-all text-white rounded-lg'>
+                    <button onClick={() => setShowLogin(true)} className='cursor-pointer px-8 py-2 bg-dark-ocean hover:bg-cream transition-all text-white rounded-lg'>
                         Login
                     </button>
                 </div>

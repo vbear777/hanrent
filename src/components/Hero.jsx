@@ -26,12 +26,12 @@ const Hero = () => {
                         <label htmlFor="return-date">Return Date</label>
                         <input type="date" id='return-date' min={new Date().toISOString().split('T')[0]} className='text-sm text-gray-500' required/>
                     </div>
-                    <button className='flex items-center justify-center gap-1 px-9 py-3 max-sm:mt-4 bg-gradient-to-r from-dark-ocean to-cream text-white rounded-full cursor-pointer'>
-                        <img src={assets.search_icon} alt="search" className='brightness-300'/>
-                        Search
-                    </button>
                 </div>
 
+                <button className='flex items-center justify-center gap-1 px-9 py-3 max-sm:mt-4 bg-gradient-to-r from-dark-ocean via-cream to-dark-ocean bg-[length:200%_100%] bg-left hover:bg-right transition-all duration-1000 text-white rounded-full cursor-pointer group'>
+                    <img src={assets.search_icon} alt="search" className='brightness-300'/>
+                    <span>Search</span>
+                </button>
             </form>
 
             <img src={assets.main_car} alt="car" className='max-h-74' />
