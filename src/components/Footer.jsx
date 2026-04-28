@@ -23,22 +23,22 @@ const Footer = () => {
                     <div>
                         <p className='text-lg text-white font-semibold'>COMPANY</p>
                         <ul className='mt-3 flex flex-col gap-2 text-sm'>
-                            <li><a href="#" className="hover:text-gray-700 transition-colors">About</a></li>
-                            <li><a href="#" className="hover:text-gray-700 transition-colors">Careers</a></li>
-                            <li><a href="#" className="hover:text-gray-700 transition-colors">Press</a></li>
-                            <li><a href="#" className="hover:text-gray-700 transition-colors">Blog</a></li>
-                            <li><a href="#" className="hover:text-gray-700 transition-colors">Partners</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">About</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Press</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Partners</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <p className='text-lg text-white font-semibold'>SUPPORT</p>
                         <ul className='mt-3 flex flex-col gap-2 text-sm'>
-                            <li><a href="#" className="hover:text-gray-700 transition-colors">Help Center</a></li>
-                            <li><a href="#" className="hover:text-gray-700 transition-colors">Safety Information</a></li>
-                            <li><a href="#" className="hover:text-gray-700 transition-colors">Cancellation Options</a></li>
-                            <li><a href="#" className="hover:text-gray-700 transition-colors">Contact Us</a></li>
-                            <li><a href="#" className="hover:text-gray-700 transition-colors">Accessibility</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Safety Information</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Cancellation Options</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Accessibility</a></li>
                         </ul>
                     </div>
                 </div>

@@ -27,8 +27,18 @@ const FeaturedSection = () => {
                 onClick={() => {
                     navigate('/cars'); scrollTo(0,0)
                 }} 
-                className='flex items-center justify-center gap-2 px-6 py-2 border border-borderColor hover:bg-gray-50 rounded-md mt-18 cursor-pointer'>
-                Explore all cars <img src={assets.arrow_icon} alt="arrow" />
+                className='relative overflow-hidden flex items-center justify-center gap-2 px-6 py-2 border border-dark-ocean bg-white text-dark-ocean rounded-md mt-18 cursor-pointer group transition-all duration-300'
+            >
+                <span className='absolute inset-0 w-0 bg-dark-ocean transition-all duration-500 ease-out group-hover:w-full'></span>
+                
+                <span className='relative z-10 flex items-center gap-2 transition-all duration-300 group-hover:text-white group-hover:gap-3'>
+                    Explore all cars
+                    <img 
+                        src={assets.arrow_icon} 
+                        alt="arrow" 
+                        className='transition-transform duration-300 group-hover:translate-x-1'
+                    />
+                </span>
             </button>
         </div>
     )
