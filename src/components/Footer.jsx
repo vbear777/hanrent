@@ -21,24 +21,32 @@ const Footer = () => {
                 {/* Bagian kanan: COMPANY dan SUPPORT (flex row agar berdekatan) */}
                 <div className='flex flex-wrap gap-8 md:gap-12 lg:gap-16'>
                     <div>
-                        <p className='text-lg text-white font-semibold'>COMPANY</p>
+                        <h2 className='text-base text-white font-semibold'>Quick Links</h2>
                         <ul className='mt-3 flex flex-col gap-2 text-sm'>
-                            <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Press</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Partners</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Home</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Browse Cars</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">List Your Car</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
                         </ul>
                     </div>
 
                     <div>
-                        <p className='text-lg text-white font-semibold'>SUPPORT</p>
+                        <h2 className='text-base text-white font-semibold'>Resources</h2>
                         <ul className='mt-3 flex flex-col gap-2 text-sm'>
                             <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Safety Information</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Cancellation Options</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Accessibility</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Insurance</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 className='text-base text-white font-semibold'>Contact</h2>
+                        <ul className='mt-3 flex flex-col gap-2 text-sm'>
+                            <li>4398573</li>
+                            <li>Bandung</li>
+                            <li>+62 8932 3259 3824</li>
+                            <li>hanifwalian@gmail.com</li>
                         </ul>
                     </div>
                 </div>
@@ -49,7 +57,7 @@ const Footer = () => {
                 <ul className='flex items-center gap-4'>
                     <li><a href="#" className="hover:text-gray-700 transition-colors">Privacy</a></li>
                     <li><a href="#" className="hover:text-gray-700 transition-colors">Terms</a></li>
-                    <li><a href="#" className="hover:text-gray-700 transition-colors">Sitemap</a></li>
+                    <li><a href="#" className="hover:text-gray-700 transition-colors">Cookies</a></li>
                 </ul>
             </div>
         </div>
