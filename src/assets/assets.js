@@ -1,8 +1,8 @@
 import logo from "./logohan.svg";
+import logo2 from "./logohan2.svg";
 import gmail_logo from "./gmail_logo.svg";
 import facebook_logo from "./facebook_logo.svg";
 import instagram_logo from "./instagram_logo.svg";
-import twitter_logo from "./twitter_logo.svg";
 import menu_icon from "./menu_icon.svg";
 import search_icon from "./search_icon.svg"
 import close_icon from "./close_icon.svg"
@@ -45,10 +45,10 @@ export const cityList = ['Bandung', 'Tasikmalaya', 'Garut', 'Jakarta']
 
 export const assets = {
     logo,
+    logo2,
     gmail_logo,
     facebook_logo,
     instagram_logo,
-    twitter_logo,
     menu_icon,
     search_icon,
     close_icon,
