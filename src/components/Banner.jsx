@@ -10,7 +10,7 @@ const Banner = () => {
                 <p className='mt-2'>You can collaborate and monetize your vehicles effortlessly by listing it on HanRent</p>
                 <p className='max-w-130'>We take care of secure payments, insurance, and drive verification so you can easily get passive income.</p>
 
-                <button className='px-6 py-2 bg-white hover:bg-slate-100 transition-all text-dark-ocean rounded-lg text-sm mt-4 cursor-pointer'>List your car</button>
+                <button className='px-6 py-2 bg-white hover:bg-dark-ocean border border-dark-ocean/10 hover:text-white hover:border-white transition-all text-dark-ocean rounded-lg text-sm mt-4 cursor-pointer'>List your car</button>
             </div>
             <img src={assets.banner_car_image} alt="banner car" className='max-h-45 mt-10' />
         </div>
