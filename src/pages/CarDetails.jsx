@@ -87,7 +87,7 @@ const CarDetails = () => {
                     Book Now
                     </button>
 
-                    <p className='text-center text-sm'>No credit card reuquired to reserve</p>
+                    <p className='text-center text-sm'>No credit card required to reserve</p>
                 </form>
             </div>
         </div>
