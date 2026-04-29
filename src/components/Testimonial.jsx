@@ -11,7 +11,7 @@ const Testimonial = () => {
         },
         {
             image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200',
-            name: 'Avery Johnson',
+            name: 'Johnson',
             handle: '@averywrites',
             text: 'HanRent made my business trip so much easier. The pickup and drop-off were hassle-free, and the prices are very reasonable. Their customer service responded quickly when I had a question. Highly recommended!'
         },
@@ -29,8 +29,8 @@ const Testimonial = () => {
         },
         {
             image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=60',
-            name: 'Morgan Freeman',
-            handle: '@morganf',
+            name: 'Jasmine',
+            handle: '@jasminef',
             text: "Great value for money! The car exceeded my expectations, and the return process took less than 5 minutes. HanRent is now my go-to rental service. Keep up the great work!"
         },
         {
