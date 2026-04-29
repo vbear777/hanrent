@@ -2,11 +2,11 @@ import React from 'react'
 
 const Newsletter = () => {
     return (
-        <div class="w-full bg-dark-ocean px-2 text-center text-white py-20 flex flex-col items-center justify-center">
-            <p class="text-cream font-medium">Get updated</p>
-            <h1 class="max-w-lg font-semibold text-4xl/[44px] mt-2">Subscribe to get the latest offer & discount</h1>
-            <div class="flex items-center justify-center mt-10 border border-slate-600 focus-within:outline focus-within:outline-indigo-600 text-sm rounded-full h-14 max-w-md w-full">
-                <input type="text" class="bg-transparent outline-none rounded-full px-4 h-full flex-1" placeholder="Enter your email address"/>
+        <div className="w-full bg-dark-ocean px-2 text-center text-white py-20 flex flex-col items-center justify-center">
+            <p className="text-cream font-medium">Get updated</p>
+            <h1 className="max-w-lg font-semibold text-4xl/[44px] mt-2">Subscribe to get the latest offer & discount</h1>
+            <div className="flex items-center justify-center mt-10 border border-slate-600 focus-within:outline focus-within:outline-indigo-600 text-sm rounded-full h-14 max-w-md w-full">
+                <input type="text" className="bg-transparent outline-none rounded-full px-4 h-full flex-1" placeholder="Enter your email address"/>
                 <button 
                     type='submit' 
                     className="relative overflow-hidden bg-white text-dark-ocean rounded-full h-11 mr-1 px-8 flex items-center justify-center cursor-pointer group transition-all duration-300 border border-white"
