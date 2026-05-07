@@ -26,8 +26,11 @@ const NavBar = ({ setShowLogin }) => {
                 </div>
 
                 <div className='flex max-sm:flex-col items-start sm:items-center gap-6'>
-                    <button onClick={() => navigate('/owner')} className='curso-pointer'>
+                    <button onClick={() => navigate('/owner')} className='cursor-pointer relative overflow-hidden flex items-center justify-center gap-2 px-6 py-2 border border-dark-ocean/60 bg-white text-dark-ocean rounded-md cursor-pointer group transition-all duration-300'>
+                    <span className='absolute inset-0 w-0 bg-dark-ocean transition-all duration-500 ease-out group-hover:w-full'></span>
+                    <span className='relative z-10 flex items-center gap-2 transition-all duration-300 group-hover:text-white group-hover:gap-3'>
                         Dashboard
+                    </span>
                     </button>
                     <button onClick={() => setShowLogin(true)} className='cursor-pointer px-8 py-2 bg-dark-ocean hover:bg-dark-ocean/60 transition-all text-white rounded-lg'>
                         Login
