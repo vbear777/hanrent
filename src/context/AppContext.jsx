@@ -13,6 +13,42 @@ export const AppProvider = ({ children }) => {
     const currency = import.meta.env.VITE_CURRENCY
     const [token, setToken] = useState(null)
     const [user, setUser] = useState(null)
+    const [isOwner, setIsOwner] = useState(false)
+    const [showLogin, setShowLogin] = useState(false)
+    const [pickupDate, setPickupDate] = useState('')
+    const [returnDate, setReturnDate] = useState('')
+
+    const [cars, setCars] = useState([])
+
+    //check if user is login
+    const fetchUser = async () => {
+        try {
+            const { data } = await axios.get('/api/user/data')
+            if(data.success) {
+                setUser(data.user)
+                setIsOwner(data.user.role === 'owner')
+            } else {
+                navigate('/')
+            }
+        } catch (error) {
+            toast.error(error.message)
+        }
+    }
+
+    //useEffect to retrieve token from local storage
+    useEffect(() => {
+        const token = localStorage.getItem('token')
+        setToken(token)
+    }, [])
+
+    //useEffect to fetch user data when token is available
+    useEffect(() => {
+        if(token) {
+            axios.defaults.headers.common['Authorization'] = `${token}`
+            fetchUser()
+        }
+    }, [token])
+
     const value = {
         navigate,
     } 
