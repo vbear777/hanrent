@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { assets, menuLinks } from '../assets/assets';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAppContext } from '../context/AppContext';
 
-const NavBar = ({ setShowLogin }) => {
+const NavBar = () => {
+    const {setShowLogin, user, logOut, isOwner, axios, setIsOwner } = useAppContext()
+
     const location = useLocation()
     const [open, setOpen] = useState(false)
     const navigate = useNavigate()
@@ -32,8 +35,8 @@ const NavBar = ({ setShowLogin }) => {
                         Dashboard
                     </span>
                     </button>
-                    <button onClick={() => setShowLogin(true)} className='cursor-pointer px-8 py-2 bg-dark-ocean hover:bg-dark-ocean/60 transition-all text-white rounded-lg'>
-                        Login
+                    <button onClick={() => { user ? logOut() : setShowLogin(true)}} className='cursor-pointer px-8 py-2 bg-dark-ocean hover:bg-dark-ocean/60 transition-all text-white rounded-lg'>
+                        { user ? 'Logout' : 'Login'}
                     </button>
                 </div>
             </div>

@@ -71,7 +71,7 @@ export const AppProvider = ({ children }) => {
     }, [token])
 
     const value = {
-        navigate,
+        navigate, currency, axios, user, setUser, token, setToken, isOwner, setIsOwner, fetchUser, showLogin, setShowLogin, logOut, fetchCars, cars, setCars, pickupDate, setPickupDate, returnDate, setReturnDate
     } 
 
     return (
