@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
@@ -36,7 +36,7 @@ export const AppProvider = ({ children }) => {
     }
 
     //fetch all cars from server
-    const fetchCars = () => {
+    const fetchCars = async () => {
         try {
             const {data} = await axios.get('/api/user/cars')
             data.success ? setCars(data.cars) : toast.error(data.message)
@@ -46,7 +46,7 @@ export const AppProvider = ({ children }) => {
     }
 
     // function to log out feature
-    const logOut = () => {
+    const logout = () => {
         localStorage.removeItem('token')
         setToken(null)
         setUser(null)
@@ -71,7 +71,7 @@ export const AppProvider = ({ children }) => {
     }, [token])
 
     const value = {
-        navigate, currency, axios, user, setUser, token, setToken, isOwner, setIsOwner, fetchUser, showLogin, setShowLogin, logOut, fetchCars, cars, setCars, pickupDate, setPickupDate, returnDate, setReturnDate
+        navigate, currency, axios, user, setUser, token, setToken, isOwner, setIsOwner, fetchUser, showLogin, setShowLogin, logout, fetchCars, cars, setCars, pickupDate, setPickupDate, returnDate, setReturnDate
     } 
 
     return (

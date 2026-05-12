@@ -4,11 +4,25 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAppContext } from '../context/AppContext';
 
 const NavBar = () => {
-    const {setShowLogin, user, logOut, isOwner, axios, setIsOwner } = useAppContext()
+    const {setShowLogin, user, logout, isOwner, axios, setIsOwner } = useAppContext()
 
     const location = useLocation()
     const [open, setOpen] = useState(false)
     const navigate = useNavigate()
+
+    const changeRole = async () => {
+        try {
+            const { data } = await axios.post('/api/owner/change-role')
+            if(data.success) {
+                setIsOwner(true)
+                toast.success(data.message)
+            } else {
+                toast.error(data.message)
+            }
+        } catch (error) {
+            toast.error(data.message)
+        }
+    }
 
     return (
         <div className={`flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 text-gray-600 border-b border-borderColor relative transition-all ${location.pathname === "/" && "bg-light"}`}>
@@ -29,10 +43,10 @@ const NavBar = () => {
                 </div>
 
                 <div className='flex max-sm:flex-col items-start sm:items-center gap-6'>
-                    <button onClick={() => navigate('/owner')} className='cursor-pointer relative overflow-hidden flex items-center justify-center gap-2 px-6 py-2 border border-dark-ocean/60 bg-white text-dark-ocean rounded-md cursor-pointer group transition-all duration-300'>
+                    <button onClick={() => isOwner ? navigate('/owner') : changeRole()} className='cursor-pointer relative overflow-hidden flex items-center justify-center gap-2 px-6 py-2 border border-dark-ocean/60 bg-white text-dark-ocean rounded-md cursor-pointer group transition-all duration-300'>
                     <span className='absolute inset-0 w-0 bg-dark-ocean transition-all duration-500 ease-out group-hover:w-full'></span>
                     <span className='relative z-10 flex items-center gap-2 transition-all duration-300 group-hover:text-white group-hover:gap-3'>
-                        Dashboard
+                        {isOwner ? 'Dashboard' : 'List cars'}
                     </span>
                     </button>
                     <button onClick={() => { user ? logOut() : setShowLogin(true)}} className='cursor-pointer px-8 py-2 bg-dark-ocean hover:bg-dark-ocean/60 transition-all text-white rounded-lg'>
