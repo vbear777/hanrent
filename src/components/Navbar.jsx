@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { assets, menuLinks } from '../assets/assets';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAppContext } from '../context/AppContext';
+import toast from 'react-hot-toast';
 
 const NavBar = () => {
     const {setShowLogin, user, logout, isOwner, axios, setIsOwner } = useAppContext()
@@ -49,7 +50,7 @@ const NavBar = () => {
                         {isOwner ? 'Dashboard' : 'List cars'}
                     </span>
                     </button>
-                    <button onClick={() => { user ? logOut() : setShowLogin(true)}} className='cursor-pointer px-8 py-2 bg-dark-ocean hover:bg-dark-ocean/60 transition-all text-white rounded-lg'>
+                    <button onClick={() => { user ? logout() : setShowLogin(true)}} className='cursor-pointer px-8 py-2 bg-dark-ocean hover:bg-dark-ocean/60 transition-all text-white rounded-lg'>
                         { user ? 'Logout' : 'Login'}
                     </button>
                 </div>

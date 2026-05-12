@@ -5,13 +5,13 @@ const Testimonial = () => {
     const cardsData = [
         {
             image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200',
-            name: 'Briar Martin',
+            name: 'Ujang Martin',
             handle: '@neilstellar',
             text: "Fantastic experience with HanRent! The booking process was smooth, the car was clean and in perfect condition, and the staff was super friendly. I'll definitely rent from them again on my next trip!"
         },
         {
             image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200',
-            name: 'Johnson',
+            name: 'Alessio',
             handle: '@averywrites',
             text: 'HanRent made my business trip so much easier. The pickup and drop-off were hassle-free, and the prices are very reasonable. Their customer service responded quickly when I had a question. Highly recommended!'
         },
@@ -23,8 +23,8 @@ const Testimonial = () => {
         },
         {
             image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60',
-            name: 'Lewis Graham',
-            handle: '@lewisgg2',
+            name: 'Asep Graham',
+            handle: '@asepgg2',
             text: "I've rented from several companies before, but HanRent is by far the best. Transparent pricing, no hidden fees, and the vehicle was spotless. The team even gave me great local tips for my road trip. Love them."
         },
         {
@@ -35,7 +35,7 @@ const Testimonial = () => {
         },
         {
             image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=60',
-            name: 'Tobey Williams',
+            name: 'Tobey Aveiro',
             handle: '@tobey',
             text: "Amazing support from the HanRent team! My flight was delayed, but they waited for me and still gave me a warm welcome. The car was modern, well-maintained, and very clean. Truly a 5-star experience."
         }
