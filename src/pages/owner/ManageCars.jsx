@@ -23,6 +23,20 @@ const ManageCars = () => {
         }
     }
 
+    const toggleAvailability = async (carId) => {
+        try {
+            const { data } = await axios.post('/api/owner/toggle-car', {carId})
+            if (data.success){
+                toast.success(data.message)
+                fetchOwnerCars()
+            } else {
+                toast.error(data.message)
+            }
+        } catch (error) {
+            toast.error(error.message)
+        }
+    }
+
     useEffect(() => {
         isOwner && fetchOwnerCars()
     }, [isOwner])
@@ -62,7 +76,7 @@ const ManageCars = () => {
                                 </td>
 
                                 <td className='flex items-center p-3'>
-                                    <img src={car.isAvailable ? assets.eye_close_icon : assets.eye_icon} alt="eye icon" className='cursor-pointer' />
+                                    <img onClick={() => toggleAvailability(car._id)} src={car.isAvailable ? assets.eye_close_icon : assets.eye_icon} alt="eye icon" className='cursor-pointer' />
                                     <img src={assets.delete_icon} alt="delete icon" className='cursor-pointer' />
                                 </td>
                             </tr>
