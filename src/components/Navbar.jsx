@@ -44,7 +44,7 @@ const NavBar = () => {
                 </div>
 
                 <div className='flex max-sm:flex-col items-start sm:items-center gap-6'>
-                    <button onClick={() => isOwner ? navigate('/owner') : changeRole()} className='cursor-pointer relative overflow-hidden flex items-center justify-center gap-2 px-6 py-2 border border-dark-ocean/60 bg-white text-dark-ocean rounded-md cursor-pointer group transition-all duration-300'>
+                    <button onClick={() => isOwner ? navigate('/owner') : changeRole()} className='cursor-pointer relative overflow-hidden flex items-center justify-center px-4 py-2 border border-dark-ocean/60 bg-white text-dark-ocean rounded-md cursor-pointer group transition-all duration-300'>
                     <span className='absolute inset-0 w-0 bg-dark-ocean transition-all duration-500 ease-out group-hover:w-full'></span>
                     <span className='relative z-10 flex items-center gap-2 transition-all duration-300 group-hover:text-white group-hover:gap-3'>
                         {isOwner ? 'Dashboard' : 'List cars'}
