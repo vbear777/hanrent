@@ -37,6 +37,23 @@ const ManageCars = () => {
         }
     }
 
+    const deleteCar = async (carId) => {
+        try {
+            const confirm = window.confirm('Are you sure you want to delete this car?')
+
+            if(!confirm) return null
+
+            const { data } = await axios.post('/api/owner/delete-car', {carId})
+            if (data.success){
+                toast.success(data.message)
+            } else {
+                toast.error(data.message)
+            }
+        } catch (error) {
+            toast.error(error.message)
+        }
+    }
+
     useEffect(() => {
         isOwner && fetchOwnerCars()
     }, [isOwner])
@@ -77,7 +94,7 @@ const ManageCars = () => {
 
                                 <td className='flex items-center p-3'>
                                     <img onClick={() => toggleAvailability(car._id)} src={car.isAvailable ? assets.eye_close_icon : assets.eye_icon} alt="eye icon" className='cursor-pointer' />
-                                    <img src={assets.delete_icon} alt="delete icon" className='cursor-pointer' />
+                                    <img onClick={() => deleteCar(car._id)} src={assets.delete_icon} alt="delete icon" className='cursor-pointer' />
                                 </td>
                             </tr>
                         ))}
