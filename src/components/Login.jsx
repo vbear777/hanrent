@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useAppContext } from '../context/AppContext';
+import { assets } from '../assets/assets';
 import toast from 'react-hot-toast';
 
 const Login = () => {
 
     const {setShowLogin, axios, setToken, navigate } = useAppContext();
-
+    const [showPassword, setShowPassword] = useState(false)
     const [state, setState] = React.useState("login");
     const [name, setName] = React.useState("");
     const [email, setEmail] = React.useState("");
@@ -46,9 +47,27 @@ const Login = () => {
                     <p>Email</p>
                     <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-dark-ocean" type="email" required />
                 </div>
-                <div className="w-full ">
+                <div className="w-full relative">  {/* tambahkan relative untuk posisi ikon */}
                     <p>Password</p>
-                    <input onChange={(e) => setPassword(e.target.value)} value={password} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-dark-ocean" type="password" required />
+                    <input
+                        onChange={(e) => setPassword(e.target.value)}
+                        value={password}
+                        placeholder="type here"
+                        className="border border-gray-200 rounded w-full p-2 mt-1 outline-dark-ocean pr-10"
+                        type={showPassword ? "text" : "password"}
+                        required
+                    />
+                    <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-2 top-8 cursor-pointer"
+                    >
+                        <img
+                            src={showPassword ? assets.eye_close_icon : assets.eye_icon}
+                            alt="toggle password visibility"
+                            className="w-5 h-5"
+                        />
+                    </button>
                 </div>
                 {state === "register" ? (
                     <p>
