@@ -2,9 +2,21 @@ import React, { useState } from 'react'
 import Title from '../components/Title';
 import { assets, dummyCarData } from '../assets/assets';
 import CarCard from '../components/CarCard';
+import { useAppContext } from '../context/AppContext';
 
 const Cars = () => {
     const [input, setInput] = useState()
+
+    // getting search params
+    const [searchParams] = useSearchParams()
+    const pickupLocation = searchParams.get('pickupLocation')
+    const pickupDate = searchParams.get('pickupDate')
+    const returnDate = searchParams.get('returnDate')
+
+    const {cars, axios} = useAppContext();
+    const isSearchData = pickupLocation && pickupDate && returnDate
+    const [filteredCars, setFilteredCars] = useState([])
+    const searchCarAvailability
 
     return (
         <div>
@@ -24,7 +36,7 @@ const Cars = () => {
                 <p className='text-cream/70 xl:px-20 max-w-7xl mx-auto'>Showing {dummyCarData.length} Cars</p>
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 xl:px-20 max-w-7xl mx-auto mb-14'>
-                    {dummyCarData.map((car, index) => (
+                    {cars.map((car, index) => (
                         <div key={index}>
                             <CarCard car={car} />
                         </div>
