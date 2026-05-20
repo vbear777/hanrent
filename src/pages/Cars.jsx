@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Title from '../components/Title';
 import { assets, dummyCarData } from '../assets/assets';
 import CarCard from '../components/CarCard';
 import { useAppContext } from '../context/AppContext';
+import { useSearchParams } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const Cars = () => {
     const [input, setInput] = useState()
@@ -16,7 +18,52 @@ const Cars = () => {
     const {cars, axios} = useAppContext();
     const isSearchData = pickupLocation && pickupDate && returnDate
     const [filteredCars, setFilteredCars] = useState([])
-    const searchCarAvailability
+
+    {/* const searchCarAvailability = async () => {
+        try {
+            const { data } = await axios.post('/api/bookings/check-availability', { location: pickupLocation, pickupDate, returnDate })
+            if (data.success) {
+                setFilteredCars(data.availableCars)
+                if (data.availableCars.length === 0) {
+                    toast('No cars available')
+                }
+            } else {
+                toast.error(data.message)
+            }
+        } catch (error) {
+            toast.error(error.message)
+        }
+    }
+
+    useEffect(() => {
+        if (isSearchData) {
+            searchCarAvailability()
+        } else {
+            // Jika tidak ada parameter pencarian, tampilkan semua mobil yang available
+            setFilteredCars(cars.filter(car => car.isAvailable))
+        }
+    }, [isSearchData, cars])
+
+    // Filter berdasarkan input search (jika ada)
+    const displayedCars = filteredCars.filter(car => 
+        car.brand.toLowerCase().includes(input.toLowerCase()) ||
+        car.model.toLowerCase().includes(input.toLowerCase())
+    )*/}
+    
+    const searchCarAvailability = async () => {
+        const { data } = await axios.post('/api/bookings/check-availability', {location: pickupLocation, pickupDate, returnDate})
+        if (data.success) {
+            setFilteredCars(data.availableCars)
+            if(data.availableCars.length === 0){
+                toast('No cars available')
+            }
+            return null
+        }
+    }
+
+    useEffect(() => {
+        isSearchData && searchCarAvailability()
+    }, []) 
 
     return (
         <div>
@@ -33,10 +80,10 @@ const Cars = () => {
             </div>
 
             <div className='px-6 md:px-6 lg:px-24 xl:px-32 mt-10'>
-                <p className='text-cream/70 xl:px-20 max-w-7xl mx-auto'>Showing {dummyCarData.length} Cars</p>
+                <p className='text-cream/70 xl:px-20 max-w-7xl mx-auto'>Showing {filteredCars.length} Cars</p>
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 xl:px-20 max-w-7xl mx-auto mb-14'>
-                    {cars.map((car, index) => (
+                    {filteredCars.map((car, index) => (
                         <div key={index}>
                             <CarCard car={car} />
                         </div>
