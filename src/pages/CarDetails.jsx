@@ -4,6 +4,7 @@ import { assets, dummyCarData } from '../assets/assets'
 import Loader from '../components/Loader'
 import { useAppContext } from '../context/AppContext'
 import toast from 'react-hot-toast'
+import { motion } from 'motion/react'
 
 const CarDetails = () => {
     const {id} = useParams()
@@ -44,8 +45,19 @@ const CarDetails = () => {
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12'>
                 {/* Left: Car Image & Details */}
-                <div className='lg:col-span-2'>
-                    <img src={car.image} alt="" className='w-full h-auto md:max-h-100 object-cover rounded-xl mb-6 shadow-md'/>
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className='lg:col-span-2'>
+                    <motion.img
+                        initial={{scale: 0.98, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.5 }} 
+                        src={car.image} 
+                        alt="" 
+                        className='w-full h-auto md:max-h-100 object-cover rounded-xl mb-6 shadow-md'
+                    />
                     <div>
                         <h1 className='text-3xl font-bold'>{car.brand} {car.model}</h1>
                         <p>{car.category} • {car.year}</p>
@@ -83,7 +95,7 @@ const CarDetails = () => {
                             }
                         </ul>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Right: Booking Form */}
                 <form onSubmit={handleSubmit} className='shadow-lg h-max sticky top-18 rounded-xl p-6 space-y-6 text-gray-500'>

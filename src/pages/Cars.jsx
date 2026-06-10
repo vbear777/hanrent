@@ -6,6 +6,7 @@ import CarCard from '../components/CarCard';
 import { useAppContext } from '../context/AppContext';
 import { useSearchParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { motion } from 'motion/react';
 
 const Cars = () => {
     const [input, setInput] = useState("")
@@ -60,7 +61,12 @@ const Cars = () => {
             <div className='flex flex-col items-center py-20 bg-light max-md:px-4'>
                 <Title title='Available Cars' subTitle='Browse our selection of available premium vehicles for your travel and adventure'/>
 
-                <div className='flex items-center bg-white px-4 mt-6 max-w-140 w-full h-12 rounded-full shadow'>
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                    className='flex items-center bg-white px-4 mt-6 max-w-140 w-full h-12 rounded-full shadow'
+                >
                     <img src={assets.search_icon} alt="search icon" className='w-4 h-4.5 mr-2'/>
 
                     <input 
@@ -71,7 +77,7 @@ const Cars = () => {
                         className='w-full h-full outline-none text-gray-500'
                     />
                     <img src={assets.filter_icon} alt="search icon" className='w-4 h-4.5 mr-2'/>
-                </div>
+                </motion.div>
             </div>
 
             <div className='px-6 md:px-6 lg:px-24 xl:px-32 mt-10'>
