@@ -1,5 +1,6 @@
 import React from 'react';
 import Title from './Title';
+import { motion } from 'motion/react';
 
 const Testimonial = () => {
     const cardsData = [
@@ -102,18 +103,24 @@ const Testimonial = () => {
             {/* Row 1 */}
             <div className="marquee-row w-full overflow-hidden relative">
                 <div className="absolute left-0 top-0 h-full w-10 md:w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
-                <div className="marquee-inner flex transform-gpu min-w-[200%] pt-10 pb-5">
+                <motion.div 
+                    whileHover={{ scale: 1.05 }}
+                    className="marquee-inner flex transform-gpu min-w-[200%] pt-10 pb-5"
+                >
                     {renderCardContent()}
-                </div>
+                </motion.div>
                 <div className="absolute right-0 top-0 h-full w-10 md:w-20 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
             </div>
 
             {/* Row 2 (Reverse) */}
             <div className="marquee-row w-full overflow-hidden relative">
                 <div className="absolute left-0 top-0 h-full w-10 md:w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
-                <div className="marquee-inner marquee-reverse flex transform-gpu min-w-[200%] pt-5 pb-10">
+                <motion.div 
+                    whileHover={{ scale: 1.10 }}
+                    className="marquee-inner marquee-reverse flex transform-gpu min-w-[200%] pt-5 pb-10"
+                >
                     {renderCardContent()}
-                </div>
+                </motion.div>
                 <div className="absolute right-0 top-0 h-full w-10 md:w-20 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
             </div>
         </div>

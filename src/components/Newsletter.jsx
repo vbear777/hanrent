@@ -1,11 +1,34 @@
 import React from 'react'
+import { motion } from 'motion/react';
 
 const Newsletter = () => {
     return (
-        <div className="w-full bg-dark-ocean px-2 text-center text-white py-20 flex flex-col items-center justify-center">
-            <p className="text-cream font-medium">Get updated</p>
-            <h1 className="max-w-lg font-semibold text-4xl/[44px] mt-2">Subscribe to get the latest offer & discount</h1>
-            <div className="flex items-center justify-center mt-10 border border-slate-600 focus-within:outline focus-within:outline-indigo-600 text-sm rounded-full h-14 max-w-md w-full">
+        <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="w-full bg-dark-ocean px-2 text-center text-white py-20 flex flex-col items-center justify-center"
+        >
+            <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="text-cream font-medium">
+                Get updated
+            </motion.p>
+            <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+                className="max-w-lg font-semibold text-4xl/[44px] mt-2"
+            >Subscribe to get the latest offer & discount</motion.h1>
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="flex items-center justify-center mt-10 border border-slate-600 focus-within:outline focus-within:outline-indigo-600 text-sm rounded-full h-14 max-w-md w-full"
+            >
                 <input type="text" className="bg-transparent outline-none rounded-full px-4 h-full flex-1" placeholder="Enter your email address"/>
                 <button 
                     type='submit' 
@@ -24,8 +47,8 @@ const Newsletter = () => {
                         </svg>
                     </span>
                     </button>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     )
 }
 
