@@ -1,8 +1,14 @@
 import React from 'react'
 import { assets } from '../assets/assets';
 import { motion } from 'motion/react';
+import { useAppContext } from '../context/AppContext';
 
 const Banner = () => {
+    const { navigate } = useAppContext()
+    const handleListCar = () => {
+        navigate('/owner/add-car')
+    }
+
     return (
         <motion.div 
             initial={{ opacity: 0, y: 50 }}
@@ -16,6 +22,7 @@ const Banner = () => {
                 <p className='max-w-130'>We take care of secure payments, insurance, and drive verification so you can easily get passive income.</p>
 
                 <motion.button 
+                    onClick={handleListCar}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className='px-6 py-2 bg-white hover:bg-dark-ocean border border-dark-ocean/10 hover:text-white hover:border-white transition-all text-dark-ocean rounded-lg text-sm mt-4 cursor-pointer'>

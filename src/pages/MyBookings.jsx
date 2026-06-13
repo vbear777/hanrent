@@ -76,7 +76,7 @@ const MyBookings = () => {
                                     src={booking.car.image} 
                                     alt="car" 
                                     className='w-full h-auto aspect-video object-cover'
-                                    style={{ outline: 'none' }}  // hindari outline biru
+                                    style={{ outline: 'none' }}
                                 />
                             </div>
                             <p>{booking.car.brand} {booking.car.model}</p>
