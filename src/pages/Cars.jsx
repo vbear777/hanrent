@@ -31,7 +31,7 @@ const Cars = () => {
             if (data.success) {
                 setFilteredCars(data.availableCars)
                 if (data.availableCars.length === 0) {
-                    toast('No cars available for selected dates')
+                    toast('Tidak ada mobil tersedia untuk tanggal yang dipilih')
                 }
             } else {
                 toast.error(data.message)
@@ -59,7 +59,7 @@ const Cars = () => {
     return (
         <div>
             <div className='flex flex-col items-center py-20 bg-light max-md:px-4'>
-                <Title title='Available Cars' subTitle='Browse our selection of available premium vehicles for your travel and adventure'/>
+                <Title title='Mobil Tersedia' subTitle='Temukan kendaraan premium yang tersedia untuk perjalanan Anda'/>
 
                 <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -73,7 +73,7 @@ const Cars = () => {
                         onChange={(e) => setInput(e.target.value)} 
                         value={input} 
                         type="text" 
-                        placeholder='Search by make, model, or features' 
+                        placeholder='Cari berdasarkan merek, model, atau fitur'
                         className='w-full h-full outline-none text-gray-500'
                     />
                     <img src={assets.filter_icon} alt="search icon" className='w-4 h-4.5 mr-2'/>
@@ -81,7 +81,7 @@ const Cars = () => {
             </div>
 
             <div className='px-6 md:px-6 lg:px-24 xl:px-32 mt-10'>
-                <p className='text-cream/70 xl:px-20 max-w-7xl mx-auto'>Showing {displayedCars.length} Cars</p>
+                <p className='text-cream/70 xl:px-20 max-w-7xl mx-auto'>Menampilkan {displayedCars.length} Mobil</p>
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 xl:px-20 max-w-7xl mx-auto mb-14'>
                     {displayedCars.map((car, index) => (

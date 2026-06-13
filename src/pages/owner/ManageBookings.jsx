@@ -39,17 +39,17 @@ const ManageBookings = () => {
 
     return (
         <div className='px-4 pt-10 md:px-10 w-full'>
-            <Title title="Manage Bookings" subTitle="Track all customer bookings, approve or cancel request to update booking status" />
+            <Title title="Kelola Pemesanan" subTitle="Pantau pemesanan pelanggan, setujui atau batalkan permintaan untuk memperbarui status" />
 
             <div  className='max-w-3xl w-full rounded-md overflow-hidden border border-borderColor mt-6'>
                 <table className='w-full border-collapse text-left text-sm text-gray-600'>
                     <thead className='text-gray-500'>
                         <tr>
-                            <th className='p-3 font-medium'>Car</th>
-                            <th className='p-3 font-medium max-md:hidden'>Date Range</th>
+                            <th className='p-3 font-medium'>Mobil</th>
+                            <th className='p-3 font-medium max-md:hidden'>Rentang Tanggal</th>
                             <th className='p-3 font-medium'>Total</th>
-                            <th className='p-3 font-medium max-md:hidden'>Payment</th>
-                            <th className='p-3 font-medium'>Actions</th>
+                            <th className='p-3 font-medium max-md:hidden'>Pembayaran</th>
+                            <th className='p-3 font-medium'>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -66,14 +66,14 @@ const ManageBookings = () => {
                                     {currency}{booking.price}
                                 </td>
                                 <td className='p-3 max-md:hidden'>
-                                    <span className='bg-gray-100 px-3 py-1 rounded-full text-xs'>offline</span>
+                                    <span className='bg-gray-100 px-3 py-1 rounded-full text-xs'>tunai</span>
                                 </td>
                                 <td className='p-3'>
                                     {booking.status === 'pending' ? (
                                         <select onChange={e => changeBookingStatus(booking._id, e.target.value)} value={booking.status} className='px-2 py-1.5 mt-1 text-gray-500 border border-borderColor rounded-md outline-none'>
-                                            <option value="pending">Pending</option>
-                                            <option value="cancelled">Cancelled</option>
-                                            <option value="confirmed">Confirmed</option>
+                                            <option value="pending">Menunggu</option>
+                                            <option value="cancelled">Dibatalkan</option>
+                                            <option value="confirmed">Dikonfirmasi</option>
                                         </select>
                                     ) : (
                                         <span className={`px-3 py-1 rounded-full text-xs font-semibold ${booking.status === 'confirmed' ? 'bg-green-100 text-green-500' : 'bg-red-100 text-red-500'}`}>{booking.status}</span>

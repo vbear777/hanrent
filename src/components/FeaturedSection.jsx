@@ -22,7 +22,7 @@ const FeaturedSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}   
             >
-                <Title title="Featured Vehicles" subTitle="Explore our selection of premium vehicles available for your next adventure." />
+                <Title title="Kendaraan Unggulan" subTitle="Temukan pilihan kendaraan premium untuk perjalanan Anda berikutnya." />
             </motion.div>
 
             <motion.div 
@@ -55,7 +55,7 @@ const FeaturedSection = () => {
                 <span className='absolute inset-0 w-0 bg-dark-ocean transition-all duration-500 ease-out group-hover:w-full'></span>
                 
                 <span className='relative z-10 flex items-center gap-2 transition-all duration-300 group-hover:text-white group-hover:gap-3'>
-                    Explore all cars
+                    Lihat Semua Mobil
                     <img 
                         src={assets.arrow_icon} 
                         alt="arrow" 

@@ -8,37 +8,37 @@ const Testimonial = () => {
             image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200',
             name: 'Ujang Martin',
             handle: '@neilstellar',
-            text: "Fantastic experience with HanRent! The booking process was smooth, the car was clean and in perfect condition, and the staff was super friendly. I'll definitely rent from them again on my next trip!"
+            text: "Pengalaman luar biasa dengan HanRent! Proses pemesanannya sangat mudah, mobilnya bersih dan dalam kondisi sempurna, dan stafnya sangat ramah. Saya pasti akan menyewa lagi di perjalanan berikutnya!"
         },
         {
             image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200',
             name: 'Alessio',
             handle: '@averywrites',
-            text: 'HanRent made my business trip so much easier. The pickup and drop-off were hassle-free, and the prices are very reasonable. Their customer service responded quickly when I had a question. Highly recommended!'
+            text: 'HanRent membuat perjalanan bisnis saya jauh lebih mudah. Proses jemput dan antar sangat lancar, harganya sangat terjangkau. Layanan pelanggannya cepat merespons saat saya bertanya. Sangat direkomendasikan!'
         },
         {
             image: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&auto=format&fit=crop&q=60',
             name: 'Oblivion',
             handle: '@oblivionnam_',
-            text: "Best rental car service I've ever used! The car was ready on time, fuel-efficient, and very comfortable. HanRent truly cares about their customers. 10/10 service."
+            text: "Layanan sewa mobil terbaik yang pernah saya gunakan! Mobil siap tepat waktu, irit BBM, dan sangat nyaman. HanRent benar-benar peduli dengan pelanggannya. Pelayanan 10/10."
         },
         {
             image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=60',
             name: 'Asep Graham',
             handle: '@asepgg2',
-            text: "I've rented from several companies before, but HanRent is by far the best. Transparent pricing, no hidden fees, and the vehicle was spotless. The team even gave me great local tips for my road trip. Love them."
+            text: "Sudah pernah menyewa dari beberapa tempat, tapi HanRent yang terbaik sejauh ini. Harga transparan, tanpa biaya tersembunyi, dan kendaraannya sangat bersih. Timnya bahkan memberi rekomendasi wisata lokal yang keren. Suka banget!"
         },
         {
             image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=60',
             name: 'Jasmine',
             handle: '@jasminef',
-            text: "Great value for money! The car exceeded my expectations, and the return process took less than 5 minutes. HanRent is now my go-to rental service. Keep up the great work!"
+            text: "Sangat worth it! Mobilnya melebihi ekspektasi saya, dan proses pengembalian hanya butuh kurang dari 5 menit. HanRent kini jadi pilihan utama saya setiap perjalanan. Pertahankan pelayanannya!"
         },
         {
             image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=60',
             name: 'Tobey Aveiro',
             handle: '@tobey',
-            text: "Amazing support from the HanRent team! My flight was delayed, but they waited for me and still gave me a warm welcome. The car was modern, well-maintained, and very clean. Truly a 5-star experience."
+            text: "Dukungan yang luar biasa dari tim HanRent! Pesawat saya terlambat, tapi mereka tetap menunggu dan menyambut dengan hangat. Mobilnya modern, terawat, dan sangat bersih. Benar-benar pengalaman bintang 5."
         }
     ];
 
@@ -77,7 +77,7 @@ const Testimonial = () => {
     return (
         <div className="w-full mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
             <div className='p-8 mt-10'>
-                <Title title="What our customers say?" subTitle="Discover why discerning travelers choose HanRent as their partner on Rental Car." />
+                <Title title="Apa Kata Pelanggan Kami?" subTitle="Temukan mengapa pelanggan setia kami memilih HanRent sebagai mitra sewa mobil mereka." />
             </div>
             <style>{`
                 @keyframes marqueeScroll {

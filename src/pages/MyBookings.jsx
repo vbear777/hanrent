@@ -33,7 +33,7 @@ const MyBookings = () => {
     if (loading) {
         return (
             <div className='px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-48 mt-16 text-sm max-w-7xl mb-10'>
-                <Title title="My Bookings" subTitle="View and manage your all car bookings" align="left" />
+                <Title title="Pemesanan Saya" subTitle="Lihat dan kelola semua pemesanan mobil Anda" align="left" />
                 {[1, 2, 3].map(i => (
                     <div key={i} className='grid grid-cols-1 md:grid-cols-4 gap-6 p-6 border border-borderColor rounded-lg mt-5 first:mt-12 animate-pulse'>
                         <div className='md:col-span-1'>
@@ -59,7 +59,7 @@ const MyBookings = () => {
     if (bookings.length === 0) {
         return (
             <div className='px-6 md:px-16 lg:px-24 xl:px-32 mt-16 text-center'>
-                <p className='text-gray-500'>You have no bookings yet.</p>
+                <p className='text-gray-500'>Anda belum memiliki pemesanan.</p>
             </div>
         )
     }
@@ -85,20 +85,20 @@ const MyBookings = () => {
 
                         <div className='md:col-span-2'>
                             <div className='flex items-center gap-2'>
-                                <p className='px-3 py-1.5 bg-light rounded'>Booking #{index+1}</p>
+                                <p className='px-3 py-1.5 bg-light rounded'>Pemesanan #{index+1}</p>
                                 <p className={`px-3 py-1 text-xs rounded-full ${booking.status === 'confirmed' ? 'bg-green-400/15 text-green-600' : 'bg-gray-400/15 text-gray-600'}`}>{booking.status}</p>
                             </div>
                             <div className='flex items-start gap-2 mt-3'>
                                 <img src={assets.calendar_icon_colored} alt="" className='w-4 h-4 mt-1' />
                                 <div>
-                                    <p className='text-gray-500'>Rental Period</p>
-                                    <p className='text-dark-ocean font-bold'>{booking.pickupDate.split('T')[0]} To {booking.returnDate.split('T')[0]}</p>
+                                    <p className='text-gray-500'>Periode Sewa</p>
+                                    <p className='text-dark-ocean font-bold'>{booking.pickupDate.split('T')[0]} s/d {booking.returnDate.split('T')[0]}</p>
                                 </div>
                             </div>
                             <div className='flex items-start gap-2 mt-3'>
                                 <img src={assets.location_icon_colored} alt="" className='w-4 h-4 mt-1' />
                                 <div>
-                                    <p className='text-gray-500'>Pick-up Location</p>
+                                    <p className='text-gray-500'>Lokasi Penjemputan</p>
                                     <p className='text-dark-ocean font-bold'>{booking.car.location}</p>
                                 </div>
                             </div>
@@ -106,9 +106,9 @@ const MyBookings = () => {
 
                         <div className='md:col-span-1 flex flex-col justify-between gap-6'>
                             <div className='text-sm text-gray-500 text-right'>
-                                <p>Total Price</p>
+                                <p>Total Harga</p>
                                 <h1 className='text-2xl font-semibold text-cream'>{currency}{booking.price}</h1>
-                                <p>Booked on {booking.createdAt.split('T')[0]}</p>
+                                <p>Dipesan pada {booking.createdAt.split('T')[0]}</p>
                             </div>
                         </div>
                     </div>
@@ -169,21 +169,21 @@ const MyBookings = () => {
 
                         <div className='md:col-span-2'>
                             <div className='flex items-center gap-2'>
-                                <p className='px-3 py-1.5 bg-light rounded'>Booking #{index+1}</p>
+                                <p className='px-3 py-1.5 bg-light rounded'>Pemesanan #{index+1}</p>
                                 <p className={`px-3 py-1 text-xs rounded-full ${booking.status === 'confirmed' ? 'bg-green-400/15 text-green-600' : 'bg-gray-400/15 text-gray-600'}`}>{booking.status}</p>
                             </div>
 
                             <div className='flex items-start gap-2 mt-3'>
                                 <img src={assets.calendar_icon_colored} alt="" className='w-4 h-4 mt-1'/>
                                 <div>
-                                    <p className='text-gray-500'>Rental Period</p>
-                                    <p className='text-dark-ocean font-bold'>{booking.pickupDate.split('T')[0]} To {booking.returnDate.split('T')[0]}</p>
+                                    <p className='text-gray-500'>Periode Sewa</p>
+                                    <p className='text-dark-ocean font-bold'>{booking.pickupDate.split('T')[0]} s/d {booking.returnDate.split('T')[0]}</p>
                                 </div>
                             </div>
                             <div className='flex items-start gap-2 mt-3'>
                                 <img src={assets.location_icon_colored} alt="" className='w-4 h-4 mt-1'/>
                                 <div>
-                                    <p className='text-gray-500'>Pick-up Location</p>
+                                    <p className='text-gray-500'>Lokasi Penjemputan</p>
                                     <p className='text-dark-ocean font-bold'>{booking.car.location}</p>
                                 </div>
                             </div>
@@ -191,9 +191,9 @@ const MyBookings = () => {
 
                         <div className='md:col-span-1 flex flex-col justify-between gap-6'>
                             <div className='text-sm text-gray-500 text-right'>
-                                <p>Total Price</p>
+                                <p>Total Harga</p>
                                 <h1 className='text-2xl font-semibold text-cream'>{currency}{booking.price}</h1>
-                                <p>Booked on {booking.createdAt.split('T')[0]}</p>
+                                <p>Dipesan pada {booking.createdAt.split('T')[0]}</p>
                             </div>
                         </div>
                     </div>

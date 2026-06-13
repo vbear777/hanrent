@@ -23,7 +23,7 @@ const Hero = () => {
                 initial={{y: 50, opacity: 0}}
                 animate={{y: 0, opacity: 1}}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className='text-4xl md:text-5xl font-semibold'>Simple book on a rent cars platform
+                className='text-4xl md:text-5xl font-semibold'>Platform Sewa Mobil yang Mudah & Terpercaya
             </motion.h1>
 
             <motion.form
@@ -37,17 +37,17 @@ const Hero = () => {
                 <div className='flex flex-col md:flex-row items-start md:items-center gap-10 min-md:ml-8'>
                     <div className='flex flex-col items-start gap-2'>
                         <select required value={pickupLocation} onChange={(e) => setPickupLocation(e.target.value)}>
-                            <option value="">Pickup Location</option>
+                            <option value="">Lokasi Penjemputan</option>
                             {cityList.map((city) => <option key={city} value={city}>{city}</option>)}
                         </select>
-                        <p className='px-1 text-sm text-gray-500'>{pickupLocation ? pickupLocation : "Please select location"}</p>
+                        <p className='px-1 text-sm text-gray-500'>{pickupLocation ? pickupLocation : "Silakan pilih lokasi"}</p>
                     </div>
                     <div className='flex flex-col items-start gap-2'>
-                        <label htmlFor="pickup-date">Pick-up Date</label>
+                        <label htmlFor="pickup-date">Tanggal Jemput</label>
                         <input value={pickupDate} onChange={e => setPickupDate(e.target.value)} type="date" id='pickup-date' min={new Date().toISOString().split('T')[0]} className='text-sm text-gray-500' required/>
                     </div>
                     <div className='flex flex-col items-start gap-2'>
-                        <label htmlFor="return-date">Return Date</label>
+                        <label htmlFor="return-date">Tanggal Kembali</label>
                         <input value={returnDate} onChange={e => setReturnDate(e.target.value)} type="date" id='return-date' min={new Date().toISOString().split('T')[0]} className='text-sm text-gray-500' required/>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ const Hero = () => {
                     whileTap={{ scale: 0.95 }} 
                     className='flex items-center justify-center gap-1 px-9 py-3 max-sm:mt-4 bg-gradient-to-r from-dark-ocean via-cream to-dark-ocean bg-[length:200%_100%] bg-left hover:bg-right transition-all duration-1000 text-white rounded-full cursor-pointer group'>
                     <img src={assets.search_icon} alt="search" className='brightness-300'/>
-                    <span>Search</span>
+                    <span>Cari</span>
                 </motion.button>
             </motion.form>
 

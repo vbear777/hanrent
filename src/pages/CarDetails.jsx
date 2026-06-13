@@ -40,7 +40,7 @@ const CarDetails = () => {
         <div className='px-6 md:px-6 lg:px-24 xl:px-32 mt-16 mb-8'>
             <button onClick={() => navigate(-1)} className='flex items-center gap-2 mb-6 text-gray-500 cursor-pointer'>
                 <img src={assets.arrow_icon} alt="" className='rotate-180 opacity-65'/>
-                Back to all cars
+                Kembali ke semua mobil
             </button>
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12'>
@@ -66,7 +66,7 @@ const CarDetails = () => {
 
                     <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
                         {[
-                            {icon: assets.users_icon, text: `${car.seating_capacity} Seats`},
+                            {icon: assets.users_icon, text: `${car.seating_capacity} Kursi`},
                             {icon: assets.fuel_icon, text: car.fuel_type},
                             {icon: assets.car_icon, text: car.transmission},
                             {icon: assets.location_icon, text: car.location}
@@ -79,14 +79,14 @@ const CarDetails = () => {
                     </div>
 
                     <div>
-                        <h1 className='text-xl font-medium mt-5 mb-3'>Description</h1>
+                        <h1 className='text-xl font-medium mt-5 mb-3'>Deskripsi</h1>
                         <p className='text-gray-500'>{car.description}</p>
                     </div>
                     <div>
-                        <h1 className='text-xl font-medium mt-5 mb-3'>Features</h1>
+                        <h1 className='text-xl font-medium mt-5 mb-3'>Fitur</h1>
                         <ul className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
                             {
-                                ["360 Camera", "Bluetooth", "GPS", "Heated Seats", "Rear View Mirror"].map((item) => (
+                                ["Kamera 360", "Bluetooth", "GPS", "Kursi Berpemanas", "Kaca Spion Belakang"].map((item) => (
                                     <li key={item} className='flex items-center text-gray-500'>
                                         <img src={assets.check_icon} alt="" className='h-4 mr-2' />
                                         {item}
@@ -99,12 +99,12 @@ const CarDetails = () => {
 
                 {/* Right: Booking Form */}
                 <form onSubmit={handleSubmit} className='shadow-lg h-max sticky top-18 rounded-xl p-6 space-y-6 text-gray-500'>
-                    <p className='flex items-center justify-between text-2xl text-gray-800 font-semibold'>{currency}{car.pricePerDay}<span className='text-base text-gray-400 font-normal'>per day</span></p>
+                    <p className='flex items-center justify-between text-2xl text-gray-800 font-semibold'>{currency}{car.pricePerDay}<span className='text-base text-gray-400 font-normal'>per hari</span></p>
 
                     <hr className='border border-borderColor my-6' />
 
                     <div className='flex flex-col gap-2'>
-                        <label htmlFor="pickup-date">Pickup Date</label>
+                        <label htmlFor="pickup-date">Tanggal Jemput</label>
                         <input
                             value={pickupDate}
                             onChange={(e) => setPickupDate(e.target.value)} 
@@ -117,7 +117,7 @@ const CarDetails = () => {
                     </div>
 
                     <div className='flex flex-col gap-2'>
-                        <label htmlFor="return-date">Return Date</label>
+                        <label htmlFor="return-date">Tanggal Kembali</label>
                         <input 
                             value={returnDate}
                             onChange={(e) => setReturnDate(e.target.value)}
@@ -129,10 +129,10 @@ const CarDetails = () => {
                     </div>
 
                     <button className='w-full bg-dark-ocean hover:bg-cream transition-all py-3 font-medium text-white rounded-xl cursor-pointer'>
-                    Book Now
+                    Pesan Sekarang
                     </button>
 
-                    <p className='text-center text-sm'>No credit card required to reserve</p>
+                    <p className='text-center text-sm'>Tidak perlu kartu kredit untuk memesan</p>
                 </form>
             </div>
         </div>

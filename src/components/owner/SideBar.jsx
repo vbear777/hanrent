@@ -19,7 +19,7 @@ const SideBar = () => {
 
             if(data.success) {
                 fetchUser()
-                toast.success(data.message || 'Image Sucess Updated')
+                toast.success(data.message || 'Foto berhasil diperbarui')
                 setImage('')
             } else {
                 toast.error(data.message)
@@ -41,7 +41,7 @@ const SideBar = () => {
                 </label>
             </div>
             {image && (
-                <button className='absolute top-0 right-0 flex p-2 gap-1 bg-dark-ocean/70 text-white cursor-pointer' onClick={updateImage}>Save <img src={assets.check_icon} width={13} alt="check icon" /></button>
+                <button className='absolute top-0 right-0 flex p-2 gap-1 bg-dark-ocean/70 text-white cursor-pointer' onClick={updateImage}>Simpan <img src={assets.check_icon} width={13} alt="check icon" /></button>
             )}
             <p className='mt-2 text-base max-md:hidden'>{user?.name}</p>
 

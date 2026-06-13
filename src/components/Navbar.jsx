@@ -52,7 +52,7 @@ const NavBar = () => {
                 ))}
 
                 <div className='hidden lg:flex items-center text-sm gap-2 border border-borderColor px-3 rounded-full max-w-56'>
-                    <input type="text" className='py-1.5 w-full bg-transparent outline-none placeholder-gray-500' placeholder='Search Products' />
+                    <input type="text" className='py-1.5 w-full bg-transparent outline-none placeholder-gray-500' placeholder='Cari Produk' />
                     <img src={assets.search_icon} alt="" />
                 </div>
 
@@ -60,11 +60,11 @@ const NavBar = () => {
                     <button onClick={() => isOwner ? navigate('/owner') : changeRole()} className='cursor-pointer relative overflow-hidden flex items-center justify-center px-4 py-2 border border-dark-ocean/60 bg-white text-dark-ocean rounded-md cursor-pointer group transition-all duration-300'>
                     <span className='absolute inset-0 w-0 bg-dark-ocean transition-all duration-500 ease-out group-hover:w-full'></span>
                     <span className='relative z-10 flex items-center gap-2 transition-all duration-300 group-hover:text-white group-hover:gap-3'>
-                        {isOwner ? 'Dashboard' : 'List cars'}
+                        {isOwner ? 'Dasbor' : 'Daftarkan Mobil'}
                     </span>
                     </button>
                     <button onClick={() => { user ? logout() : setShowLogin(true)}} className='cursor-pointer px-8 py-2 bg-dark-ocean hover:bg-dark-ocean/60 transition-all text-white rounded-lg'>
-                        { user ? 'Logout' : 'Login'}
+                        { user ? 'Keluar' : 'Masuk'}
                     </button>
                 </div>
             </div>

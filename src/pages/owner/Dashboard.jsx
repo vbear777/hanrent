@@ -17,10 +17,10 @@ const Dashboard = () => {
     })
 
     const dashboardCards = [
-        {title: "Total Cars", value: data.totalCars, icon: assets.carIconColored},
-        {title: "Total Bookings", value: data.totalBookings, icon: assets.listIconColored},
-        {title: "Pending", value: data.pendingBookings, icon: assets.cautionIconColored},
-        {title: "Confirmed", value: data.completedBookings, icon: assets.listIconColored}
+        {title: "Total Mobil", value: data.totalCars, icon: assets.carIconColored},
+        {title: "Total Pemesanan", value: data.totalBookings, icon: assets.listIconColored},
+        {title: "Menunggu", value: data.pendingBookings, icon: assets.cautionIconColored},
+        {title: "Dikonfirmasi", value: data.completedBookings, icon: assets.listIconColored}
     ]
 
     const fetchDashboardData = async () => {
@@ -44,7 +44,7 @@ const Dashboard = () => {
 
     return (
         <div className='px-4 pt-10 md:px-10 flex-1'>
-            <Title title="Admin Dashboard" subTitle="Monitor total cars, bookings, revenue, and recent activities" />
+            <Title title="Dasbor Admin" subTitle="Pantau total mobil, pemesanan, pendapatan, dan aktivitas terbaru" />
 
             <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8 max-w-3xl'>
                 {dashboardCards.map((card, index) => (
@@ -62,8 +62,8 @@ const Dashboard = () => {
 
             <div className='flex flex-wrap items-start gap-6 mb-8 w-full'>
                 <div className='p-4 md:p-6 border border-borderColor rounded-md max-w-lg w-full'>
-                    <h1 className='text-lg font-medium'>Recent Bookings</h1>
-                    <p className='text-gray-500'>Latest customer bookings</p>
+                    <h1 className='text-lg font-medium'>Pemesanan Terbaru</h1>
+                    <p className='text-gray-500'>Pemesanan pelanggan terbaru</p>
                     {data.recentBookings.map((booking, index) => (
                         <div key={index} className='mt-4 flex justify-between items-center'>
                             <div className='flex items-center gap-2'>
@@ -85,8 +85,8 @@ const Dashboard = () => {
                 </div>
 
                 <div className='p-4 md:p-6 mb-6 border border-borderColor rounded-md w-full md:max-w-xs'>
-                    <h1 className='text-lg font-medium'>Monthly Revenue</h1>
-                    <p className='text-gray-500'>Revenue for current month</p>
+                    <h1 className='text-lg font-medium'>Pendapatan Bulanan</h1>
+                    <p className='text-gray-500'>Pendapatan bulan ini</p>
                     <p className='text-3xl mt-6 font-semibold text-cream'>{currency} {data.monthlyRevenue}</p>
                 </div>
             </div>

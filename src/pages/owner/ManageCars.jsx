@@ -39,7 +39,7 @@ const ManageCars = () => {
 
     const deleteCar = async (carId) => {
         try {
-            const confirm = window.confirm('Are you sure you want to delete this car?')
+            const confirm = window.confirm('Yakin ingin menghapus mobil ini?')
 
             if(!confirm) return null
 
@@ -60,17 +60,17 @@ const ManageCars = () => {
 
     return (
         <div className='px-4 pt-10 md:px-10 w-full'>
-            <Title title="Manage Cars" subTitle="View all listed cars, update or remove them from booking platform" />
+            <Title title="Kelola Mobil" subTitle="Lihat semua mobil terdaftar, perbarui atau hapus dari platform pemesanan" />
 
             <div  className='max-w-3xl w-full rounded-md overflow-hidden border border-borderColor mt-6'>
                 <table className='w-full border-collapse text-left text-sm text-gray-600'>
                     <thead className='text-gray-500'>
                         <tr>
-                            <th className='p-3 font-medium'>Car</th>
-                            <th className='p-3 font-medium max-md:hidden'>Category</th>
-                            <th className='p-3 font-medium'>Price</th>
+                            <th className='p-3 font-medium'>Mobil</th>
+                            <th className='p-3 font-medium max-md:hidden'>Kategori</th>
+                            <th className='p-3 font-medium'>Harga</th>
                             <th className='p-3 font-medium max-md:hidden'>Status</th>
-                            <th className='p-3 font-medium'>Actions</th>
+                            <th className='p-3 font-medium'>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -88,7 +88,7 @@ const ManageCars = () => {
 
                                 <td className='p-3 max-md:hidden'>
                                     <span className={`px-3 py-1 rounded-full text-xs ${car.isAvailable ? 'bg-green-100 text-green-500' : 'bg-red-100 text-red-500'}`}>
-                                        {car.isAvailable ? "Available" : "Unavailable"}
+                                        {car.isAvailable ? "Tersedia" : "Tidak Tersedia"}
                                     </span>
                                 </td>
 

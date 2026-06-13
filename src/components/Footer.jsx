@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className='max-w-80'>
                     <img src={assets.logo2} alt="logo" className='h-8 md:h-9' />
                     <p className='max-w-80 mt-3 text-white'>
-                        Premium car rental service with wide selection.
+                        Layanan sewa mobil premium dengan pilihan terlengkap.
                     </p>
                     <div className='flex items-center gap-3 mt-6'>
                         <a href="#"><img src={assets.instagram_logo} alt="instagram logo" className='w-5 h-5'/></a>
@@ -21,27 +21,27 @@ const Footer = () => {
                 {/* Bagian kanan: COMPANY dan SUPPORT (flex row agar berdekatan) */}
                 <div className='flex flex-wrap gap-8 md:gap-12 lg:gap-16'>
                     <div>
-                        <h2 className='text-base text-white font-semibold'>QUICK LINKS</h2>
+                        <h2 className='text-base text-white font-semibold'>TAUTAN CEPAT</h2>
                         <ul className='mt-3 flex flex-col gap-2 text-sm'>
-                            <li><a href="#" className="hover:text-white transition-colors">Home</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Browse Cars</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">List Your Car</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Beranda</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Telusuri Mobil</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Daftarkan Mobil</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Tentang Kami</a></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h2 className='text-base text-white font-semibold'>RESOURCES</h2>
+                        <h2 className='text-base text-white font-semibold'>SUMBER DAYA</h2>
                         <ul className='mt-3 flex flex-col gap-2 text-sm'>
-                            <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Insurance</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Pusat Bantuan</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Syarat Layanan</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Kebijakan Privasi</a></li>
+                            <li><a href="#" className="hover:text-white transition-colors">Asuransi</a></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h2 className='text-base text-white font-semibold'>CONTACT</h2>
+                        <h2 className='text-base text-white font-semibold'>KONTAK</h2>
                         <ul className='mt-3 flex flex-col gap-2 text-sm'>
                             <li>4398573</li>
                             <li>Bandung</li>
@@ -53,11 +53,11 @@ const Footer = () => {
             </div>
             <hr className='border-gray-300 mt-8' />
             <div className='flex flex-col md:flex-row gap-2 items-center justify-between py-5 text-white'>
-                <p>© {new Date().getFullYear()} <a href="/" className="hover:text-gray-700 transition-colors">HanRent</a>. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} <a href="/" className="hover:text-gray-700 transition-colors">HanRent</a>. Hak cipta dilindungi.</p>
                 <ul className='flex items-center gap-4'>
-                    <li><a href="#" className="hover:text-cream transition-colors">Privacy</a></li>
-                    <li><a href="#" className="hover:text-cream transition-colors">Terms</a></li>
-                    <li><a href="#" className="hover:text-cream transition-colors">Cookies</a></li>
+                    <li><a href="#" className="hover:text-cream transition-colors">Privasi</a></li>
+                    <li><a href="#" className="hover:text-cream transition-colors">Ketentuan</a></li>
+                    <li><a href="#" className="hover:text-cream transition-colors">Cookie</a></li>
                 </ul>
             </div>
         </div>

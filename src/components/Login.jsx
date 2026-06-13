@@ -18,7 +18,7 @@ const Login = () => {
             const { data } = await axios.post(`/api/user/${state}`, {name, email, password})
 
             if (data.success){
-                toast.success(state === "login" ? "Logged in successfully!" : "Account created successfully!");
+                toast.success(state === "login" ? "Berhasil masuk!" : "Akun berhasil dibuat!");
                 navigate('/')
                 setToken(data.token)
                 localStorage.setItem('token', data.token)
@@ -35,24 +35,24 @@ const Login = () => {
         <div onClick={() => setShowLogin(false)} className='fixed top-0 bottom-0 left-0 right-0 z-100 flex items-center text-sm text-gray-600 bg-black/50'>
             <form onSubmit={onSubmitHandler} onClick={(e) => e.stopPropagation()} className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] text-gray-500 rounded-lg shadow-xl border border-gray-200 bg-white">
                 <p className="text-2xl font-medium m-auto">
-                    <span className="text-dark-ocean">User</span> {state === "login" ? "Login" : "Sign Up"}
+                    <span className="text-dark-ocean">Pengguna</span> {state === "login" ? "Masuk" : "Daftar"}
                 </p>
                 {state === "register" && (
                     <div className="w-full">
-                        <p>Name</p>
-                        <input onChange={(e) => setName(e.target.value)} value={name} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-dark-ocean" type="text" required />
+                        <p>Nama</p>
+                        <input onChange={(e) => setName(e.target.value)} value={name} placeholder="ketik di sini" className="border border-gray-200 rounded w-full p-2 mt-1 outline-dark-ocean" type="text" required />
                     </div>
                 )}
                 <div className="w-full ">
                     <p>Email</p>
-                    <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-dark-ocean" type="email" required />
+                    <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="ketik di sini" className="border border-gray-200 rounded w-full p-2 mt-1 outline-dark-ocean" type="email" required />
                 </div>
                 <div className="w-full relative">  {/* tambahkan relative untuk posisi ikon */}
-                    <p>Password</p>
+                    <p>Kata Sandi</p>
                     <input
                         onChange={(e) => setPassword(e.target.value)}
                         value={password}
-                        placeholder="type here"
+                        placeholder="ketik di sini"
                         className="border border-gray-200 rounded w-full p-2 mt-1 outline-dark-ocean pr-10"
                         type={showPassword ? "text" : "password"}
                         required
@@ -71,15 +71,15 @@ const Login = () => {
                 </div>
                 {state === "register" ? (
                     <p>
-                        Already have account? <span onClick={() => setState("login")} className="text-dark-ocean cursor-pointer">click here</span>
+                        Sudah punya akun? <span onClick={() => setState("login")} className="text-dark-ocean cursor-pointer">klik di sini</span>
                     </p>
                 ) : (
                     <p>
-                        Create an account? <span onClick={() => setState("register")} className="text-dark-ocean cursor-pointer">click here</span>
+                        Belum punya akun? <span onClick={() => setState("register")} className="text-dark-ocean cursor-pointer">klik di sini</span>
                     </p>
                 )}
                 <button className="bg-dark-ocean hover:bg-dark-ocean/60 transition-all text-white w-full py-2 rounded-md cursor-pointer">
-                    {state === "register" ? "Create Account" : "Login"}
+                    {state === "register" ? "Buat Akun" : "Masuk"}
                 </button>
             </form>
         </div>
